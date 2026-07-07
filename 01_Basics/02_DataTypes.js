@@ -11,6 +11,10 @@
 
     7. Object ->
 */
+
+//x = 10; // in strict mode we cannot define a variable like this.
+//console.log(x);
+
 console.log(typeof("Anmol"));
 console.log(typeof(null));
 console.log(typeof(undefined));
