@@ -1,5 +1,4 @@
 import { only } from "node:test";
-
 export async function fetchQuestions()
 {
     try{
