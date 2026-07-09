@@ -43,3 +43,15 @@ console.log(combineDetails);
 
 const combineUsingSpread = {...details1, ...details2}; // as spread opeartor seperates each value one by one from objects;
 console.log(combineUsingSpread)
+
+// Objects destructuring;
+
+const {name, Address} = combineUsingSpread;
+
+console.log(name, Address);
+
+// destructuring with custom names;
+
+const {name: userName, Address: userAddress} = combineUsingSpread;
+
+console.log(userName, userAddress);
