@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning DOM</title>
+</head>
+<body>
+    <div class="week" style="display: flex; flex-direction: column; align-items: center;"> 
+        <div class="days">Monday</div>
+        <div class="days">Tuesday</div>
+        <div class="days">Wednesday</div>
+        <div class="days">Thrusday</div>
+        <div class="days">Friday</div>
+        <div class="days">Saturday</div>
+        <div class="days">Sunday</div>
+    </div>
+</body>
+
+<script>
+    // console.log("Hello World");
+    // console.log(window);
+    // console.log(document.body);
+
+    const parentDiv = document.querySelector('.week');
+
+    // console.log(parentDiv);
+    console.log(parentDiv.childNodes); // nodeList;
+    console.log(parentDiv.children); // html collection;
+
+    const monday = document.querySelector('.days');
+
+    console.log(monday);
+    
+    monday.style.color = 'green'
+</script>
+</html>
