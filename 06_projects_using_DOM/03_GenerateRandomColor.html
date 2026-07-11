@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center;">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+</body>
+<script>
+    function generateHex()
+    {
+        const rangeOfHex = '0123456789ABCDEF';
+        let hex = "#";
+
+        for(let i=0; i<6; i++)
+        {
+            const num = Math.floor(Math.random() * 16);
+            hex += rangeOfHex[num];
+        }
+        return hex;
+    }
+    // generateHex();
+
+    let interval = '';
+    
+    function startChangingColour()
+    {
+        if(interval == ''){
+            interval = setInterval(()=>{
+                document.body.style.backgroundColor = generateHex();
+            }, 1000)
+        }
+    }
+    function stopChangingColour()
+    {
+        clearInterval(interval);
+        document.body.style.backgroundColor = 'white';
+        interval = '';
+    }
+
+    const parent = document.querySelector('div');
+    const startBtn = document.querySelector('#start');
+    const stopBtn = document.querySelector('#stop');
+
+    startBtn.addEventListener('click', startChangingColour); 
+    stopBtn.addEventListener('click', stopChangingColour);
+</script>
+</html>
