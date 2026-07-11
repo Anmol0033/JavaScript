@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change BG</title>
+</head>
+<body>
+    <div style="display: flex; margin: 50px; justify-content: center;">
+        <div class="button" id="red" style="height: 100px; width: 100px;background-color: red; margin: 20px; border: 2px solid white;" ></div>
+        <div class="button" id="green" style="height: 100px; width: 100px;background-color: green; margin: 20px; border: 2px solid white;"></div>
+        <div class="button" id="purple" style="height: 100px; width: 100px;background-color: purple; margin: 20px; border: 2px solid white;"></div>
+        <div class="button" id="blue" style="height: 100px; width: 100px;background-color: blue; margin: 20px; border: 2px solid white;"></div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('div');
+    function setBG()
+    {
+        const boxes = document.querySelectorAll('.button');
+        boxes.forEach((box)=>{
+            console.log(box);
+            box.addEventListener('click', (e)=>{
+                const colour = (e.target.id);
+                document.body.style.background = colour;
+            })
+        })
+    }
+    
+    //Fun time
+    const newDiv = document.createElement('div');
+    newDiv.setAttribute('id', 'black');
+    newDiv.style.background = 'black';
+    newDiv.style.height = '100px';
+    newDiv.style.width = '100px';
+    newDiv.style.border = '2px solid white';
+    newDiv.style.margin = '20px'
+    newDiv.setAttribute('class', 'button');
+    
+    parent.append(newDiv);
+    
+    setBG();
+</script>
+</html>
