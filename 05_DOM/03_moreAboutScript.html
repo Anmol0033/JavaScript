@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:rgb(193, 193, 193); display: flex; flex-direction: column; align-items: center;">
+    <ul class="listOfLang">
+        <li>Java</li>
+    </ul>
+</body>
+<script>
+    //Add language
+    function addLanguage(language)
+    {
+        const li = document.createElement('li');
+        li.innerHTML = `${language}`;
+        document.querySelector('.listOfLang').append(li);
+    }
+    addLanguage("Python")
+    addLanguage("c++")
+
+    //Edit 
+    function editElemet(idx, newLang)
+    {
+        const li = document.querySelector(`li:nth-child(${idx})`);
+        console.log(li);
+        li.innerHTML = `${newLang}`;
+    }
+    editElemet(3, "ABC");
+    editElemet(3, "Jaaava");
+
+    //Delete
+    function deleteElement(idx)
+    {
+        const deleteElement = document.querySelector(`li:nth-child(${idx})`);
+        deleteElement.remove();
+    }
+
+    deleteElement(3);
+    deleteElement(2);
+
+    addLanguage('Javascript');
+    addLanguage('Ruby');
+</script>
+</html>
