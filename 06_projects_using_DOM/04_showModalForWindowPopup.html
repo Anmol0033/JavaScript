@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="openBtn">Open Input Popup</button>
+
+    <dialog id="inputDialog">
+        <form method="dialog">
+            <p><label for="username">Enter your text:</label></p>
+            <p><input type="text" id="username" placeholder="Type here..."></p>
+            <div>
+                <button value="cancel">Cancel</button>
+                <button id="confirmBtn" value="default">Submit</button>
+            </div>
+        </form>
+    </dialog>
+
+</body>
+
+    <script>
+        const openBtn = document.querySelector('button');
+        const dialog = document.querySelector('#inputDialog');
+        const confirmBtn = document.querySelector('#confirmBtn');
+        const inputField = document.getElementById('username');
+
+        openBtn.addEventListener('click', ()=>{
+            dialog.showModal();
+        })
+
+        confirmBtn.addEventListener('click', (e)=>{
+            e.preventDefault();
+            const value = inputField.value;
+            console.log(value);
+            inputField.value = ''; // Reset field
+            dialog.close(); // Close the popup window
+        })
+
+    </script>
+
+</html>
