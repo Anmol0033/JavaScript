@@ -32,3 +32,24 @@ export async function deleteContact(id)
     const updateFile = await fs.writeFile("contacts.json", JSON.stringify(updatedArray));
     return getAllContacts();
 }
+
+export async function updateContact(id, obj)
+{
+    const fileData = await fs.readFile("contacts.json", "utf-8")
+    const dataArray = JSON.parse(fileData);
+
+    const index = dataArray.findIndex(contact => contact.id == id);
+
+    if(index != -1)
+    {
+        dataArray[index] = {
+            ...dataArray[index],
+            ...obj
+        };
+        console.log(dataArray);
+        await fs.writeFile("contacts.json", JSON.stringify(dataArray));
+    }
+    else return null;
+
+    return dataArray[index];
+}

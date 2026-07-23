@@ -8,14 +8,14 @@
 </head>
 <body>
     <div class="form-div">
-        <form action="/save_contact" method="post" class="form">
+        <form action="/save_contact" method="post" id="contact-form">
             <div>
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" required>
             </div>
             <div>
                 <label for="number">Number:</label>
-                <input type="text" name="number" id="number" required>
+                <input type="number" name="number" id="number" required>
             </div>
             <div>
                 <label for="address">Address:</label>
@@ -25,7 +25,7 @@
                 <label for="profession">Profession:</label>
                 <input type="text" name="profession" id="profession">
             </div>
-            <button type="submit">Save</button>
+            <button type="submit" id="submit-btn">Save</button>
         </form>
         <div>
             <h2>List of contacts</h2>
